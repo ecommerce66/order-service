@@ -1,0 +1,24 @@
+services:
+  mysqldb:
+    image: mysql:8.0.40
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: order_service
+      MYSQL_ROOT_USER: root
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mysql-data:/var/lib/mysql
+#    networks:
+#      - mynetwork
+
+#  springbootapp:
+#    image: springbootapp:latest
+#    container_name: springbootapp
+#    ports:
+#      - "8080:8080"
+#    depends_on:
+#      - mysqldb
+#    networks:
+#      - mynetwork
